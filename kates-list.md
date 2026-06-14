@@ -6,7 +6,7 @@ Essays, posts
 "I fed my work to Gemini and asked it to give it a go for me, on this very essay. At first, I thought it was awful. But then I realized: What if I am the one who is awful?"
 - [Debugging: Google requests permission to release 32m mosquitoes in California and Florida (The Guardian)](https://www.theguardian.com/technology/2026/jun/01/google-permission-release-mosquitoes-california-florida) - | Mosquito, Industry, Pan/epidemics
 - [On Google Debug concerns (LinkedIn @ Bradley White )](https://www.linkedin.com/posts/bradley-white-ba0431115_why-google-wants-to-release-32-million-mosquitoes-activity-7467309095306457088--MGc?utm_source=share&utm_medium=member_desktop&rcm=ACoAADKJLfgB9wD9N2XbzjvQ5r73h4OfwLjZjo0) - | Mosquito, Industry, Pan/epidemics
-- [How can we use AI and robotics to predict diseases before an outbreak? (Instagram @gabastorga @msft_research)](https://www.instagram.com/gabastorga/reel/DPTvlxdjcW8/) - | AI, Pan/epidemics
+- [How can we use AI and robotics to predict diseases before an outbreak? (Instagram @gabastorga @msft_research)](https://www.instagram.com/gabastorga/reel/DPTvlxdjcW8/) - | AI, Pan/epidemics, Industry
 - [‘Some of these diseases are in the Bible’: despair as cuts halt progress on age-old tropical illnesses (The Guardian)](https://www.theguardian.com/global-development/2025/apr/09/despair-as-cuts-halt-progress-on-neglected-tropical-diseases-usaid) - | NTDs
 - [The FDA wants Bayesian trials, but who chooses the prior? (LinkedIn @ Lu Qian)](https://www.linkedin.com/posts/luqian_the-fda-wants-bayesian-trials-but-who-chooses-activity-7470852400522805248-hyk0?utm_source=share&utm_medium=member_desktop&rcm=ACoAADKJLfgB9wD9N2XbzjvQ5r73h4OfwLjZjo0) - | Statistics, Regulatory Policy
 - [AI is Destroying the University and Learning Itself (Current Affairs)](https://www.currentaffairs.org/news/ai-is-destroying-the-university-and-learning-itself) - | AI, Education
@@ -34,7 +34,7 @@ Useful courses, software, datasets
 - [Under the Skin: The Hidden Toll of Racism on American Lives (Linda Villarosa)](https://www.penguinrandomhouse.com/books/604283/under-the-skin-by-linda-villarosa/) - | Health Systems
 - [A Crack in Creation: Gene Editing and the Unthinkable Power to Control Evolution (Jennifer Doudna, Samuel H. Sternberg)](https://www.theguardian.com/books/2017/jun/17/a-crack-in-creation-by-jennifer-doudna-and-samuel-sternberg-review) - | Genomics
 - [Rosalind Franklin: The Dark Lady of DNA (Brenda Maddox)](https://en.wikipedia.org/wiki/Rosalind_Franklin:_The_Dark_Lady_of_DNA) - | Genomics
-
+- [Happening (Annie Ernaux)](https://en.wikipedia.org/wiki/Happening_%28book%29) - | Health Systems, Family Planning
 
 ## Movies
 
@@ -53,7 +53,7 @@ A loose categorization at best; many entries only partially match their labels.
 - [Erin Brockovich (Steven Soderbergh)](https://www.youtube.com/watch?v=jjqUUxIy_yk) - | Toxicology, Environment, Industry
 - [Hope (Maria Sødahl)](https://www.youtube.com/watch?v=bAKzXtY6Lmc) - | Health Systems, Terminal Disease
 - [Plan 75 (Chie Hayakawa)](https://www.youtube.com/watch?v=-at2w5ORFfE) - | Health Systems
-- [The Assessment (Fleur Fortuné)](https://www.youtube.com/watch?v=bYmELiSalx0) - | Health Systems
+- [The Assessment (Fleur Fortuné)](https://www.youtube.com/watch?v=bYmELiSalx0) - | Health Systems, Family Planning
 - [The Voice of Hind Rajab (Kaouther Ben Hania)](https://www.youtube.com/watch?v=hrssPpqv6vc) - | Global Health, Health Systems
 - [The President and the Dragon (Waleed Eltayeb, Ian D. Murphy)](https://www.youtube.com/watch?v=00EEWYnWtYQ) - | Health Systems, NTDs
-
+- [4 Months, 3 Weeks and 2 Days (Cristian Mungiu)](https://www.youtube.com/watch?v=ZisE16JBUMA) - | Health Systems, Family Planning
