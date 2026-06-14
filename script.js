@@ -133,10 +133,14 @@ function filterSectionsByTopic(sections, topic) {
 function renderTopicFilters(sections) {
   const topics = [
     "All",
-    ...new Set(
-      sections.flatMap((section) =>
-        section.items.flatMap((item) => item.topics),
+    ...[
+      ...new Set(
+        sections.flatMap((section) =>
+          section.items.flatMap((item) => item.topics),
+        ),
       ),
+    ].sort((firstTopic, secondTopic) =>
+      firstTopic.localeCompare(secondTopic),
     ),
   ];
 
