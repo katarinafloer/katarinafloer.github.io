@@ -1,12 +1,84 @@
 const repositoryApiUrl =
   "https://api.github.com/repos/katarinafloer/katarinafloer.github.io/commits/main";
-const savedThings = [];
+const listSections = [
+  {
+    title: "Articles",
+    description: "Essays, posts, and pieces I want to keep close.",
+    items: [],
+  },
+  {
+    title: "Papers",
+    description: "Academic papers, preprints, and research references.",
+    items: [],
+  },
+  {
+    title: "Tools",
+    description: "Useful software, datasets, and technical references.",
+    items: [],
+  },
+];
 
 const list = document.querySelector("#reading-list");
+const sectionMenu = document.querySelector("#section-menu");
 const lastUpdatedElement = document.querySelector("#last-updated");
 
-function renderSavedThings(items) {
-  if (!items.length) {
+function slugify(text) {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+function renderSectionMenu(sections) {
+  const menuItems = sections.map((section) => {
+    const link = document.createElement("a");
+    link.href = `#${slugify(section.title)}`;
+    link.textContent = section.title;
+    return link;
+  });
+
+  sectionMenu.replaceChildren(...menuItems);
+}
+
+function renderListItem(item) {
+  const link = document.createElement("a");
+  link.className = "list-item";
+  link.href = item.url;
+
+  const content = document.createElement("span");
+
+  const title = document.createElement("h4");
+  title.className = "item-title";
+  title.textContent = item.title;
+
+  const description = document.createElement("p");
+  description.className = "item-description";
+  description.textContent = item.description;
+
+  const meta = document.createElement("span");
+  meta.className = "item-meta";
+
+  const tag = document.createElement("span");
+  tag.className = "tag";
+  tag.textContent = item.tag;
+
+  const date = document.createElement("span");
+  date.textContent = item.date;
+
+  const arrow = document.createElement("span");
+  arrow.className = "arrow";
+  arrow.setAttribute("aria-hidden", "true");
+  arrow.textContent = "->";
+
+  meta.append(tag, date);
+  content.append(title, description, meta);
+  link.append(content, arrow);
+
+  return link;
+}
+
+function renderSavedThings(sections) {
+  if (!sections.length) {
     const emptyState = document.createElement("p");
     emptyState.className = "empty-state";
     emptyState.textContent = "No saved links yet.";
@@ -14,47 +86,45 @@ function renderSavedThings(items) {
     return;
   }
 
-  const renderedItems = items.map((item) => {
-    const link = document.createElement("a");
-    link.className = "list-item";
-    link.href = item.url;
+  const renderedSections = sections.map((section) => {
+    const group = document.createElement("section");
+    group.className = "list-group";
+    group.id = slugify(section.title);
+    group.setAttribute("aria-labelledby", `${group.id}-title`);
 
-    const content = document.createElement("span");
+    const header = document.createElement("div");
+    header.className = "list-group-header";
 
     const title = document.createElement("h3");
-    title.className = "item-title";
-    title.textContent = item.title;
+    title.id = `${group.id}-title`;
+    title.textContent = section.title;
 
     const description = document.createElement("p");
-    description.className = "item-description";
-    description.textContent = item.description;
+    description.textContent = section.description;
 
-    const meta = document.createElement("span");
-    meta.className = "item-meta";
+    const items = document.createElement("div");
+    items.className = "list-items";
 
-    const tag = document.createElement("span");
-    tag.className = "tag";
-    tag.textContent = item.tag;
+    if (section.items.length) {
+      items.append(...section.items.map(renderListItem));
+    } else {
+      const emptyState = document.createElement("p");
+      emptyState.className = "empty-state";
+      emptyState.textContent = "Nothing saved here yet.";
+      items.append(emptyState);
+    }
 
-    const date = document.createElement("span");
-    date.textContent = item.date;
+    header.append(title, description);
+    group.append(header, items);
 
-    const arrow = document.createElement("span");
-    arrow.className = "arrow";
-    arrow.setAttribute("aria-hidden", "true");
-    arrow.textContent = "->";
-
-    meta.append(tag, date);
-    content.append(title, description, meta);
-    link.append(content, arrow);
-
-    return link;
+    return group;
   });
 
-  list.replaceChildren(...renderedItems);
+  list.replaceChildren(...renderedSections);
 }
 
-renderSavedThings(savedThings);
+renderSectionMenu(listSections);
+renderSavedThings(listSections);
 
 async function renderLastUpdated() {
   lastUpdatedElement.textContent = "Last updated loading...";
