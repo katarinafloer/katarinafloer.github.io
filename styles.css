@@ -7,6 +7,7 @@
   --line:  #97caed;
   --accent: #3498db; 
   --accent-strong: #2280bf;
+  --label: #9a6a3a;
   --rose: #63b0e3;
 }
 
@@ -288,7 +289,7 @@ h1 {
 }
 
 .item-meta {
-  color: var(--muted);
+  color: var(--label);
   font-size: 0.86rem;
 }
 
