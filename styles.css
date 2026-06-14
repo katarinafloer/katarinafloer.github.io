@@ -167,7 +167,6 @@ h1 {
 }
 
 .section-menu a {
-  display: list-item;
   padding: 3px 0;
   color: var(--muted);
   font-size: 0.94rem;
@@ -338,7 +337,6 @@ h1 {
 
   .section-menu a {
     min-height: 0;
-    display: list-item;
     border: 0;
     padding: 3px 0;
     white-space: nowrap;

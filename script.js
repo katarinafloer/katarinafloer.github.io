@@ -61,10 +61,12 @@ function parseListMarkdown(markdown) {
 
 function renderSectionMenu(sections) {
   const menuItems = sections.map((section) => {
+    const item = document.createElement("li");
     const link = document.createElement("a");
     link.href = `#${slugify(section.title)}`;
     link.textContent = section.title;
-    return link;
+    item.append(link);
+    return item;
   });
 
   sectionMenu.replaceChildren(...menuItems);
