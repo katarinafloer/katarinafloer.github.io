@@ -34,7 +34,7 @@ a {
 
 .site-header {
   border-bottom: 1px solid var(--line);
-  background: rgba(251, 250, 247, 0.92);
+  background: #cbe5f6;
   backdrop-filter: blur(16px);
   position: sticky;
   top: 0;
