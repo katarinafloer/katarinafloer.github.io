@@ -1,22 +1,6 @@
 const repositoryApiUrl =
   "https://api.github.com/repos/katarinafloer/katarinafloer.github.io/commits/main";
-const listSections = [
-  {
-    title: "Articles",
-    description: "Essays, posts, and pieces I want to keep close.",
-    items: [],
-  },
-  {
-    title: "Papers",
-    description: "Academic papers, preprints, and research references.",
-    items: [],
-  },
-  {
-    title: "Tools",
-    description: "Useful software, datasets, and technical references.",
-    items: [],
-  },
-];
+const listMarkdownUrl = "kates-list.md";
 
 const list = document.querySelector("#reading-list");
 const sectionMenu = document.querySelector("#section-menu");
@@ -27,6 +11,52 @@ function slugify(text) {
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/(^-|-$)/g, "");
+}
+
+function parseListMarkdown(markdown) {
+  const sections = [];
+  let currentSection = null;
+
+  markdown.split("\n").forEach((rawLine) => {
+    const line = rawLine.trim();
+
+    if (!line) {
+      return;
+    }
+
+    if (line.startsWith("## ")) {
+      currentSection = {
+        title: line.replace(/^##\s+/, ""),
+        description: "",
+        items: [],
+      };
+      sections.push(currentSection);
+      return;
+    }
+
+    if (!currentSection) {
+      return;
+    }
+
+    const listItemMatch = line.match(/^- \[([^\]]+)\]\(([^)]+)\)(?:\s+-\s+([^|]+))?(?:\s+\|\s+([^|]+))?(?:\s+\|\s+(.+))?$/);
+
+    if (listItemMatch) {
+      currentSection.items.push({
+        title: listItemMatch[1].trim(),
+        url: listItemMatch[2].trim(),
+        description: listItemMatch[3]?.trim() || "",
+        tag: listItemMatch[4]?.trim() || "Link",
+        date: listItemMatch[5]?.trim() || "",
+      });
+      return;
+    }
+
+    currentSection.description = currentSection.description
+      ? `${currentSection.description} ${line}`
+      : line;
+  });
+
+  return sections;
 }
 
 function renderSectionMenu(sections) {
@@ -123,8 +153,29 @@ function renderSavedThings(sections) {
   list.replaceChildren(...renderedSections);
 }
 
-renderSectionMenu(listSections);
-renderSavedThings(listSections);
+async function renderMarkdownList() {
+  try {
+    const response = await fetch(listMarkdownUrl);
+
+    if (!response.ok) {
+      throw new Error("Could not load Kate's List");
+    }
+
+    const sections = parseListMarkdown(await response.text());
+    renderSectionMenu(sections);
+    renderSavedThings(sections);
+  } catch {
+    sectionMenu.replaceChildren();
+    list.replaceChildren();
+
+    const emptyState = document.createElement("p");
+    emptyState.className = "empty-state";
+    emptyState.textContent = "Kate's List could not be loaded.";
+    list.append(emptyState);
+  }
+}
+
+renderMarkdownList();
 
 async function renderLastUpdated() {
   lastUpdatedElement.textContent = "Last updated loading...";

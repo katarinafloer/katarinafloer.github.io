@@ -4,16 +4,16 @@ A small static personal website for GitHub Pages.
 
 ## Edit Kate's List
 
-Open `script.js` and add or replace items in the `savedThings` array:
+Open `kates-list.md` and edit the sections or links.
 
-```js
-{
-  title: "Example title",
-  description: "A short note about why this is worth saving.",
-  url: "https://example.com",
-  tag: "Paper",
-  date: "June 2026",
-}
+Use `##` headings for the section menu:
+
+```md
+## Tools
+
+Useful software, datasets, and technical references.
+
+- [Example title](https://example.com) - A short note about why this is worth saving. | Tag | June 2026
 ```
 
 ## Publish With GitHub Pages
