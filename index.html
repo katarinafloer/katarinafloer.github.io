@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kate Floer</title>
+    <meta
+      name="description"
+      content="Kate Floer's personal website, reading list, links, and repositories."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="./" aria-label="Kate Floer home">Kate Floer</a>
+        <div class="nav-links">
+          <a class="nav-link active" href="./" aria-current="page">Kate's List</a>
+          <a class="nav-link" href="https://github.com/katefloer?tab=repositories">My Repositories</a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">Personal notes and links</p>
+        <h1 id="page-title">Kate's List</h1>
+        <p class="lede">
+          A living place for things I am reading, saving, and thinking about.
+        </p>
+      </section>
+
+      <section class="list-section" aria-label="Saved links">
+        <div class="section-heading">
+          <h2>Saved Things</h2>
+          <p>Reading, references, and useful corners of the internet.</p>
+        </div>
+        <div id="reading-list" class="reading-list"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Kate Floer</span>
+      <a href="https://github.com/katefloer">GitHub</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
