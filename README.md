@@ -1,4 +1,4 @@
-# Kate Floer Personal Website
+# Kate Flöer Personal Website
 
 A small static personal website for GitHub Pages.
 
