@@ -125,7 +125,7 @@ h1 {
   max-width: 760px;
   margin-bottom: 16px;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3rem, 8vw, 6.8rem);
+  font-size: clamp(2rem, 3vw, 2rem);
   line-height: 0.95;
 }
 
