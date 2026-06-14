@@ -58,6 +58,10 @@
       <a href="https://github.com/katarinafloer">GitHub</a>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+      const siteScript = document.createElement("script");
+      siteScript.src = `script.js?v=${Date.now()}`;
+      document.body.append(siteScript);
+    </script>
   </body>
 </html>

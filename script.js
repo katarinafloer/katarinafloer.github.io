@@ -16,6 +16,7 @@ function slugify(text) {
 function parseListMarkdown(markdown) {
   const sections = [];
   let currentSection = null;
+  let currentItem = null;
 
   markdown.split("\n").forEach((rawLine) => {
     const line = rawLine.trim();
@@ -31,6 +32,7 @@ function parseListMarkdown(markdown) {
         items: [],
       };
       sections.push(currentSection);
+      currentItem = null;
       return;
     }
 
@@ -38,16 +40,24 @@ function parseListMarkdown(markdown) {
       return;
     }
 
-    const listItemMatch = line.match(/^- \[([^\]]+)\]\(([^)]+)\)(?:\s+-\s+([^|]+))?(?:\s+\|\s+([^|]+))?(?:\s+\|\s+(.+))?$/);
+    const listItemMatch = line.match(/^- \[([^\]]+)\]\(([^)]+)\)(?:\s+-\s*([^|]*))?(?:\s+\|\s+([^|]+))?(?:\s+\|\s+(.+))?$/);
 
     if (listItemMatch) {
-      currentSection.items.push({
+      currentItem = {
         title: listItemMatch[1].trim(),
         url: listItemMatch[2].trim(),
         description: listItemMatch[3]?.trim() || "",
         tag: listItemMatch[4]?.trim() || "Link",
         date: listItemMatch[5]?.trim() || "",
-      });
+      };
+      currentSection.items.push(currentItem);
+      return;
+    }
+
+    if (currentItem) {
+      currentItem.description = currentItem.description
+        ? `${currentItem.description} ${line}`
+        : line;
       return;
     }
 
@@ -147,7 +157,7 @@ function renderSavedThings(sections) {
 
 async function renderMarkdownList() {
   try {
-    const response = await fetch(listMarkdownUrl);
+    const response = await fetch(`${listMarkdownUrl}?v=${Date.now()}`);
 
     if (!response.ok) {
       throw new Error("Could not load Kate's List");
