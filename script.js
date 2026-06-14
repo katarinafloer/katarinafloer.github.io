@@ -1,4 +1,5 @@
-const lastUpdated = "June 14, 2026";
+const repositoryApiUrl =
+  "https://api.github.com/repos/katarinafloer/katarinafloer.github.io/commits/main";
 const savedThings = [];
 
 const list = document.querySelector("#reading-list");
@@ -55,4 +56,28 @@ function renderSavedThings(items) {
 
 renderSavedThings(savedThings);
 
-lastUpdatedElement.textContent = `Last updated ${lastUpdated}`;
+async function renderLastUpdated() {
+  lastUpdatedElement.textContent = "Last updated loading...";
+
+  try {
+    const response = await fetch(repositoryApiUrl, {
+      headers: { Accept: "application/vnd.github+json" },
+    });
+
+    if (!response.ok) {
+      throw new Error("Could not load latest commit");
+    }
+
+    const data = await response.json();
+    const commitDate = new Date(data.commit.committer.date);
+    const formattedDate = new Intl.DateTimeFormat("en", {
+      dateStyle: "long",
+    }).format(commitDate);
+
+    lastUpdatedElement.textContent = `Last updated ${formattedDate}`;
+  } catch {
+    lastUpdatedElement.textContent = "Last updated unavailable";
+  }
+}
+
+renderLastUpdated();
