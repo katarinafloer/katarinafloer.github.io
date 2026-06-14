@@ -197,7 +197,11 @@ function renderSavedThings(sections) {
     items.className = "list-items";
 
     if (section.items.length) {
-      items.append(...section.items.map(renderListItem));
+      const sortedItems = [...section.items].sort((firstItem, secondItem) =>
+        firstItem.title.localeCompare(secondItem.title),
+      );
+
+      items.append(...sortedItems.map(renderListItem));
     } else {
       const emptyState = document.createElement("li");
       emptyState.className = "empty-state";
