@@ -1,7 +1,7 @@
 :root {
   color-scheme: light;
-  --bg: #eef6fc;
-  --panel: #eef6fc; 
+  --bg:  #fff; 
+  --panel: #fff; 
   --text:  #0f3a57;
   --muted: #185d8b;
   --line:  #97caed;
