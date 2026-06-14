@@ -119,7 +119,7 @@ function renderListItem(item) {
 
 function filterSectionsByTopic(sections, topic) {
   if (topic === "All") {
-    return sections;
+    return sections.filter((section) => section.items.length);
   }
 
   return sections
