@@ -27,7 +27,7 @@ Useful courses, software, datasets
 - [The Worth of Water (Gary White, Matt Damon)](https://www.penguinrandomhouse.com/books/635415/the-worth-of-water-by-gary-white-and-matt-damon/) - | Global Health, Water
 - [Metrics: What Counts in Global Health (Vincanne Adams)](https://read.dukeupress.edu/books/book/78/MetricsWhat-Counts-in-Global-Health) - | Health Systems, Global Health, Statistics
 - [The Lomidine Files: The Untold Story of a Medical Disaster in Colonial Africa (Guillaume Lachenal)](https://www.amazon.com/Lomidine-Files-Medical-Disaster-Colonial/dp/1421423235) - | Health Systems, Global Health
-- [Global Health Law (Lawrence O. Gostin)](https://www.hup.harvard.edu/books/9780674728844) - | Health Systems
+- [Global Health Law (Lawrence O. Gostin)](https://www.hup.harvard.edu/books/9780674728844) - | Health Systems, Regulatory Policy
 - [Under the Big Tree: Extraordinary Stories from the Movement to End Neglected Tropical Diseases (Ellen Agler)](https://www.underthebigtreebook.com/) - | Health Systems, NTDs
 - [The Fears of the Rich, The Needs of the Poor: My Years at the CDC (William Foege)](https://www.amazon.com/Fears-Rich-Needs-Poor-Years/dp/1421425297) - | Health Systems
 - [Under the Skin: The Hidden Toll of Racism on American Lives (Linda Villarosa)](https://www.penguinrandomhouse.com/books/604283/under-the-skin-by-linda-villarosa/) - | Health Systems
