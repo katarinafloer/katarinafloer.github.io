@@ -4,7 +4,10 @@ const listMarkdownUrl = "kates-list.md";
 
 const list = document.querySelector("#reading-list");
 const sectionMenu = document.querySelector("#section-menu");
+const topicFilters = document.querySelector("#topic-filters");
 const lastUpdatedElement = document.querySelector("#last-updated");
+let activeTopic = "All";
+let currentSections = [];
 
 function slugify(text) {
   return text
@@ -47,7 +50,7 @@ function parseListMarkdown(markdown) {
         title: listItemMatch[1].trim(),
         url: listItemMatch[2].trim(),
         description: listItemMatch[3]?.trim() || "",
-        tag: listItemMatch[4]?.trim() || "Link",
+        topic: listItemMatch[4]?.trim() || "Untagged",
         date: listItemMatch[5]?.trim() || "",
       };
       currentSection.items.push(currentItem);
@@ -99,14 +102,52 @@ function renderListItem(item) {
     listItem.append(description);
   }
 
-  if (item.tag || item.date) {
+  if (item.topic || item.date) {
     const meta = document.createElement("span");
     meta.className = "item-meta";
-    meta.textContent = ` (${[item.tag, item.date].filter(Boolean).join(", ")})`;
+    meta.textContent = ` (${[item.topic, item.date].filter(Boolean).join(", ")})`;
     listItem.append(meta);
   }
 
   return listItem;
+}
+
+function filterSectionsByTopic(sections, topic) {
+  if (topic === "All") {
+    return sections;
+  }
+
+  return sections
+    .map((section) => ({
+      ...section,
+      items: section.items.filter((item) => item.topic === topic),
+    }))
+    .filter((section) => section.items.length);
+}
+
+function renderTopicFilters(sections) {
+  const topics = [
+    "All",
+    ...new Set(
+      sections.flatMap((section) => section.items.map((item) => item.topic)),
+    ),
+  ];
+
+  const buttons = topics.map((topic) => {
+    const button = document.createElement("button");
+    button.className = "topic-filter-button";
+    button.type = "button";
+    button.textContent = topic;
+    button.setAttribute("aria-pressed", String(topic === activeTopic));
+    button.addEventListener("click", () => {
+      activeTopic = topic;
+      renderTopicFilters(currentSections);
+      renderSavedThings(filterSectionsByTopic(currentSections, activeTopic));
+    });
+    return button;
+  });
+
+  topicFilters.replaceChildren(...buttons);
 }
 
 function renderSavedThings(sections) {
@@ -142,7 +183,10 @@ function renderSavedThings(sections) {
     } else {
       const emptyState = document.createElement("li");
       emptyState.className = "empty-state";
-      emptyState.textContent = "Nothing saved here yet.";
+      emptyState.textContent =
+        activeTopic === "All"
+          ? "Nothing saved here yet."
+          : `Nothing saved for ${activeTopic} yet.`;
       items.append(emptyState);
     }
 
@@ -164,10 +208,13 @@ async function renderMarkdownList() {
     }
 
     const sections = parseListMarkdown(await response.text());
+    currentSections = sections;
     renderSectionMenu(sections);
-    renderSavedThings(sections);
+    renderTopicFilters(sections);
+    renderSavedThings(filterSectionsByTopic(sections, activeTopic));
   } catch {
     sectionMenu.replaceChildren();
+    topicFilters.replaceChildren();
     list.replaceChildren();
 
     const emptyState = document.createElement("p");
