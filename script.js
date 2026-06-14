@@ -71,40 +71,30 @@ function renderSectionMenu(sections) {
 }
 
 function renderListItem(item) {
+  const listItem = document.createElement("li");
+  listItem.className = "list-item";
+
   const link = document.createElement("a");
-  link.className = "list-item";
   link.href = item.url;
+  link.textContent = item.title;
 
-  const content = document.createElement("span");
+  listItem.append(link);
 
-  const title = document.createElement("h4");
-  title.className = "item-title";
-  title.textContent = item.title;
+  if (item.description) {
+    const description = document.createElement("span");
+    description.className = "item-description";
+    description.textContent = ` - ${item.description}`;
+    listItem.append(description);
+  }
 
-  const description = document.createElement("p");
-  description.className = "item-description";
-  description.textContent = item.description;
+  if (item.tag || item.date) {
+    const meta = document.createElement("span");
+    meta.className = "item-meta";
+    meta.textContent = ` (${[item.tag, item.date].filter(Boolean).join(", ")})`;
+    listItem.append(meta);
+  }
 
-  const meta = document.createElement("span");
-  meta.className = "item-meta";
-
-  const tag = document.createElement("span");
-  tag.className = "tag";
-  tag.textContent = item.tag;
-
-  const date = document.createElement("span");
-  date.textContent = item.date;
-
-  const arrow = document.createElement("span");
-  arrow.className = "arrow";
-  arrow.setAttribute("aria-hidden", "true");
-  arrow.textContent = "->";
-
-  meta.append(tag, date);
-  content.append(title, description, meta);
-  link.append(content, arrow);
-
-  return link;
+  return listItem;
 }
 
 function renderSavedThings(sections) {
@@ -132,13 +122,13 @@ function renderSavedThings(sections) {
     const description = document.createElement("p");
     description.textContent = section.description;
 
-    const items = document.createElement("div");
+    const items = document.createElement("ul");
     items.className = "list-items";
 
     if (section.items.length) {
       items.append(...section.items.map(renderListItem));
     } else {
-      const emptyState = document.createElement("p");
+      const emptyState = document.createElement("li");
       emptyState.className = "empty-state";
       emptyState.textContent = "Nothing saved here yet.";
       items.append(emptyState);
