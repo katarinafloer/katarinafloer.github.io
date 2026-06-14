@@ -9,6 +9,13 @@ const lastUpdatedElement = document.querySelector("#last-updated");
 let activeTopic = "All";
 let currentSections = [];
 
+function openLinksInNewTabs(root = document) {
+  root.querySelectorAll('a[href]:not([href^="#"])').forEach((link) => {
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+  });
+}
+
 function slugify(text) {
   return text
     .toLowerCase()
@@ -208,6 +215,7 @@ function renderSavedThings(sections) {
   });
 
   list.replaceChildren(...renderedSections);
+  openLinksInNewTabs(list);
 }
 
 async function renderMarkdownList() {
@@ -236,6 +244,7 @@ async function renderMarkdownList() {
 }
 
 renderMarkdownList();
+openLinksInNewTabs();
 
 async function renderLastUpdated() {
   lastUpdatedElement.textContent = "Last updated loading...";

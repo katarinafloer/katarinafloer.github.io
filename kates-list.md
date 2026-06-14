@@ -9,6 +9,7 @@ Essays, posts
 - [How can we use AI and robotics to predict diseases before an outbreak? (Instagram @gabastorga @msft_research)](https://www.instagram.com/gabastorga/reel/DPTvlxdjcW8/) - | AI, Pan/epidemics
 - [‘Some of these diseases are in the Bible’: despair as cuts halt progress on age-old tropical illnesses (The Guardian)](https://www.theguardian.com/global-development/2025/apr/09/despair-as-cuts-halt-progress-on-neglected-tropical-diseases-usaid) - | NTDs
 - [The FDA wants Bayesian trials, but who chooses the prior? (LinkedIn @ Lu Qian)](https://www.linkedin.com/posts/luqian_the-fda-wants-bayesian-trials-but-who-chooses-activity-7470852400522805248-hyk0?utm_source=share&utm_medium=member_desktop&rcm=ACoAADKJLfgB9wD9N2XbzjvQ5r73h4OfwLjZjo0) - | Statistics, Regulatory Policy
+- [AI is Destroying the University and Learning Itself (Current Affairs)](https://www.currentaffairs.org/news/ai-is-destroying-the-university-and-learning-itself) - | AI, Education
 
 ## Papers
 
@@ -54,5 +55,5 @@ A loose categorization at best; many entries only partially match their labels.
 - [Plan 75 (Chie Hayakawa)](https://www.youtube.com/watch?v=-at2w5ORFfE) - | Health Systems
 - [The Assessment (Fleur Fortuné)](https://www.youtube.com/watch?v=bYmELiSalx0) - | Health Systems
 - [The Voice of Hind Rajab (Kaouther Ben Hania)](https://www.youtube.com/watch?v=hrssPpqv6vc) - | Global Health, Health Systems
-
+- [The President and the Dragon (Waleed Eltayeb, Ian D. Murphy)](https://www.youtube.com/watch?v=00EEWYnWtYQ) - | Health Systems, NTDs
 
