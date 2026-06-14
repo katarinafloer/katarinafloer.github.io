@@ -46,11 +46,16 @@ function parseListMarkdown(markdown) {
     const listItemMatch = line.match(/^- \[([^\]]+)\]\(([^)]+)\)(?:\s+-\s*([^|]*))?(?:\s+\|\s+([^|]+))?(?:\s+\|\s+(.+))?$/);
 
     if (listItemMatch) {
+      const topics = (listItemMatch[4] || "Untagged")
+        .split(",")
+        .map((topic) => topic.trim())
+        .filter(Boolean);
+
       currentItem = {
         title: listItemMatch[1].trim(),
         url: listItemMatch[2].trim(),
         description: listItemMatch[3]?.trim() || "",
-        topic: listItemMatch[4]?.trim() || "Untagged",
+        topics: topics.length ? topics : ["Untagged"],
         date: listItemMatch[5]?.trim() || "",
       };
       currentSection.items.push(currentItem);
@@ -102,10 +107,10 @@ function renderListItem(item) {
     listItem.append(description);
   }
 
-  if (item.topic || item.date) {
+  if (item.topics.length || item.date) {
     const meta = document.createElement("span");
     meta.className = "item-meta";
-    meta.textContent = ` (${[item.topic, item.date].filter(Boolean).join(", ")})`;
+    meta.textContent = ` (${[item.topics.join(", "), item.date].filter(Boolean).join(", ")})`;
     listItem.append(meta);
   }
 
@@ -120,7 +125,7 @@ function filterSectionsByTopic(sections, topic) {
   return sections
     .map((section) => ({
       ...section,
-      items: section.items.filter((item) => item.topic === topic),
+      items: section.items.filter((item) => item.topics.includes(topic)),
     }))
     .filter((section) => section.items.length);
 }
@@ -129,7 +134,9 @@ function renderTopicFilters(sections) {
   const topics = [
     "All",
     ...new Set(
-      sections.flatMap((section) => section.items.map((item) => item.topic)),
+      sections.flatMap((section) =>
+        section.items.flatMap((item) => item.topics),
+      ),
     ),
   ];
 
