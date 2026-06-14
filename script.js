@@ -1,6 +1,8 @@
+const lastUpdated = "June 14, 2026";
 const savedThings = [];
 
 const list = document.querySelector("#reading-list");
+const lastUpdatedElement = document.querySelector("#last-updated");
 
 function renderSavedThings(items) {
   if (!items.length) {
@@ -52,3 +54,5 @@ function renderSavedThings(items) {
 }
 
 renderSavedThings(savedThings);
+
+lastUpdatedElement.textContent = `Last updated ${lastUpdated}`;
