@@ -12,6 +12,7 @@ Essays, posts
 - [AI is Destroying the University and Learning Itself (Current Affairs)](https://www.currentaffairs.org/news/ai-is-destroying-the-university-and-learning-itself) - | AI, Education
 - [Genentech layoffs; shutting down infectious disease team (LinkedIn @ Jun Wan)](https://www.linkedin.com/posts/jun-wan-439ab051_genentech-executes-another-round-of-layoffs-share-7471488466262904832-2thp/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADKJLfgB9wD9N2XbzjvQ5r73h4OfwLjZjo0) - | Biotech, Industry
 - [When AI mistakes pounded yam for mashed potato (Nature Africa)](https://www.nature.com/articles/d44148-026-00157-1) - | AI, Health Systems
+- [Sending Code to the Data: Federation, Harmonisation, and AI for African Public Health (Substack @ Oliver Morgan)](https://aipublichealth.substack.com/p/sending-code-to-the-data-federation?r=1ugjbz&utm_campaign=post&utm_medium=web&triedRedirect=true) - | AI, Global Health, Health Systems
 
 ## Papers
 
