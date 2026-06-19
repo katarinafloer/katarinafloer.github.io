@@ -14,6 +14,7 @@ Essays, posts
 - [When AI mistakes pounded yam for mashed potato (Nature Africa)](https://www.nature.com/articles/d44148-026-00157-1) - | AI, Health Systems
 - [Sending Code to the Data: Federation, Harmonisation, and AI for African Public Health (Substack @ Oliver Morgan)](https://aipublichealth.substack.com/p/sending-code-to-the-data-federation?r=1ugjbz&utm_campaign=post&utm_medium=web&triedRedirect=true) - | AI, Global Health, Health Systems
 - [Harbor (YC P26)](https://www.ycombinator.com/companies/runharbor) - | AI, Clinical Trials
+- [China & global health aid (CFR, )]()
 
 ## Papers
 
@@ -27,6 +28,9 @@ Useful courses, software, datasets
 - [DRC Ebola Bundibugyo 2026 (GitHub @INRB)](https://inrb-umie.github.io/BDBV2026-Epidemic_Dashboard/) - | Pan/epidemics
 - [ViralZone Training (@Swiss Institute of Bioinformatics)](https://viralzone.expasy.org/5576) - | Pan/epidemics 
 Also check out "Virus Spotlight" and "Human virus sizes"
+
+## Podcasts
+- [America’s Ebola Preparedness, With Thomas Bollyky | The President’s Inbox (CFR)](https://www.youtube.com/watch?v=PuU9Io-eU64) - | Pan/epidemics, Global Health
 
 ## Books
 - [Raising Lazarus: Hope, Justice, and the Future of America's Overdose Crisis (Beth Macy)](https://www.nytimes.com/2022/08/10/books/review/raising-lazarus-beth-macy.html?unlocked_article_code=1.qFA.hzT7.yWrv3pDWDPO9&smid=url-share) - | Pan/epidemics, Opioids, Health Systems
@@ -64,3 +68,4 @@ A loose categorization at best; many entries only partially match their labels.
 - [The Voice of Hind Rajab (Kaouther Ben Hania)](https://www.youtube.com/watch?v=hrssPpqv6vc) - | Global Health, Health Systems
 - [The President and the Dragon (Waleed Eltayeb, Ian D. Murphy)](https://www.youtube.com/watch?v=00EEWYnWtYQ) - | Health Systems, NTDs
 - [4 Months, 3 Weeks and 2 Days (Cristian Mungiu)](https://www.youtube.com/watch?v=ZisE16JBUMA) - | Health Systems, Family Planning
+
