@@ -24,6 +24,9 @@ Useful courses, software, datasets
 
 - [Applied Genomic Epidemiology Handbook (CZ Biohub)](https://biohub.org/ebook/applied-genomic-epidemiology-handbook/welcome-to-the-applied-genomic-epidemiology-handbook/) - | Genomics, Pan/epidemics
 - [DRC Ebola Bundibugyo 2026 (GitHub @INRB)](https://inrb-umie.github.io/BDBV2026-Epidemic_Dashboard/) - | Pan/epidemics
+- [ViralZone Training (@Swiss Institute of Bioinformatics)](https://viralzone.expasy.org/5576) - | Pan/epidemics 
+Also check out "Virus Spotlight" and "Human virus sizes"
+
 ## Books
 - [Raising Lazarus: Hope, Justice, and the Future of America's Overdose Crisis (Beth Macy)](https://www.nytimes.com/2022/08/10/books/review/raising-lazarus-beth-macy.html?unlocked_article_code=1.qFA.hzT7.yWrv3pDWDPO9&smid=url-share) - | Pan/epidemics, Opioids, Health Systems
 - [Bonding (Mariel Franklin)](https://en.wikipedia.org/wiki/Bonding_%28novel%29) - | Industry, Mental Health
