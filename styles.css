@@ -17,6 +17,7 @@
 
 html {
   background: var(--bg);
+  visibility: visible;
 }
 
 body {
